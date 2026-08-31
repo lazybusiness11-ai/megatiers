@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { rankedPlayers } from "@/lib/players";
-import { CATEGORIES, type ScoringMethod } from "@/lib/tiers";
+import { CATEGORIES } from "@/lib/tiers";
 import { PlayerRow } from "@/components/PlayerRow";
 import { CategoryIcon } from "@/components/CategoryIcon";
 
