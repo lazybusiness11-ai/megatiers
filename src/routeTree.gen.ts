@@ -10,33 +10,79 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as InfoRouteImport } from './routes/info'
+import { Route as OverallRouteImport } from './routes/overall'
+import { Route as CategoryCategoryRouteImport } from './routes/category.$category'
+import { Route as PlayerIgnRouteImport } from './routes/player.$ign'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InfoRoute = InfoRouteImport.update({
+  id: '/info',
+  path: '/info',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OverallRoute = OverallRouteImport.update({
+  id: '/overall',
+  path: '/overall',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CategoryCategoryRoute = CategoryCategoryRouteImport.update({
+  id: '/category/$category',
+  path: '/category/$category',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlayerIgnRoute = PlayerIgnRouteImport.update({
+  id: '/player/$ign',
+  path: '/player/$ign',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/info': typeof InfoRoute
+  '/overall': typeof OverallRoute
+  '/category/$category': typeof CategoryCategoryRoute
+  '/player/$ign': typeof PlayerIgnRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/info': typeof InfoRoute
+  '/overall': typeof OverallRoute
+  '/category/$category': typeof CategoryCategoryRoute
+  '/player/$ign': typeof PlayerIgnRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/info': typeof InfoRoute
+  '/overall': typeof OverallRoute
+  '/category/$category': typeof CategoryCategoryRoute
+  '/player/$ign': typeof PlayerIgnRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/info' | '/overall' | '/category/$category' | '/player/$ign'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/info' | '/overall' | '/category/$category' | '/player/$ign'
+  id:
+    | '__root__'
+    | '/'
+    | '/info'
+    | '/overall'
+    | '/category/$category'
+    | '/player/$ign'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  InfoRoute: typeof InfoRoute
+  OverallRoute: typeof OverallRoute
+  CategoryCategoryRoute: typeof CategoryCategoryRoute
+  PlayerIgnRoute: typeof PlayerIgnRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +94,43 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/info': {
+      id: '/info'
+      path: '/info'
+      fullPath: '/info'
+      preLoaderRoute: typeof InfoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/overall': {
+      id: '/overall'
+      path: '/overall'
+      fullPath: '/overall'
+      preLoaderRoute: typeof OverallRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/category/$category': {
+      id: '/category/$category'
+      path: '/category/$category'
+      fullPath: '/category/$category'
+      preLoaderRoute: typeof CategoryCategoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/player/$ign': {
+      id: '/player/$ign'
+      path: '/player/$ign'
+      fullPath: '/player/$ign'
+      preLoaderRoute: typeof PlayerIgnRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  InfoRoute: InfoRoute,
+  OverallRoute: OverallRoute,
+  CategoryCategoryRoute: CategoryCategoryRoute,
+  PlayerIgnRoute: PlayerIgnRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

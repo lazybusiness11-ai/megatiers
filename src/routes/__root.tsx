@@ -77,19 +77,29 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "MegaTiers — Minecraft PvP Tier List" },
+      {
+        name: "description",
+        content: "Minecraft PvP tier rankings across 8 gamemodes plus a combined Overall leaderboard.",
+      },
+      { property: "og:title", content: "MegaTiers — Minecraft PvP Tier List" },
+      {
+        property: "og:description",
+        content: "Minecraft PvP tier rankings across 8 gamemodes plus a combined Overall leaderboard.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
+      },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=DM+Sans:wght@400;500;700&display=swap",
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
@@ -119,8 +129,47 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <div className="min-h-screen">
+        <header className="sticky top-0 z-30 border-b border-border/70 bg-background/80 backdrop-blur">
+          <div className="mx-auto flex max-w-6xl items-center gap-4 px-4 py-3">
+            <Link to="/" className="flex items-center gap-2">
+              <span className="flex size-8 items-center justify-center rounded-lg bg-primary font-display text-sm font-bold text-primary-foreground">
+                M
+              </span>
+              <span className="font-display text-lg font-bold">MegaTiers</span>
+            </Link>
+            <div className="ml-auto flex items-center gap-4 text-sm">
+              <Link to="/overall" className="text-muted-foreground hover:text-foreground">
+                Overall
+              </Link>
+              <Link to="/info" className="text-muted-foreground hover:text-foreground">
+                How it works
+              </Link>
+            </div>
+          </div>
+          <div className="mx-auto max-w-6xl px-4 pb-3">
+            <CategoryNav />
+          </div>
+        </header>
+
+        <main className="mx-auto max-w-6xl px-4 py-8">
+          {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+          <Outlet />
+        </main>
+
+        <footer className="mt-16 border-t border-border/70">
+          <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-4 px-4 py-8 text-sm text-muted-foreground">
+            <span className="font-display font-semibold text-foreground">MegaTiers</span>
+            <span>Community-run Minecraft PvP rankings.</span>
+            <div className="ml-auto flex gap-4">
+              <a href="#" className="hover:text-foreground">Discord</a>
+              <a href="#" className="hover:text-foreground">Apply as tester</a>
+              <Link to="/info" className="hover:text-foreground">Rules</Link>
+            </div>
+          </div>
+        </footer>
+      </div>
     </QueryClientProvider>
   );
 }
+

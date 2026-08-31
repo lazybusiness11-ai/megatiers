@@ -22,7 +22,7 @@ export function TierBadge({
       </span>
     );
   }
-  const cls = styles[tier[2]] ?? styles["5"];
+  const cls = styles[tier.charAt(2)] ?? styles["5"];
   return (
     <span
       className={`inline-flex items-center gap-1 rounded-md border px-2 py-0.5 font-display font-bold tabular-nums ${cls} ${
