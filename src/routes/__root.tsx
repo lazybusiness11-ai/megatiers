@@ -103,7 +103,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=DM+Sans:wght@400;500;700&display=swap",
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.png", type: "image/png" },
     ],
   }),
   shellComponent: RootShell,
@@ -135,10 +135,11 @@ function RootComponent() {
         <header className="sticky top-0 z-30 border-b border-border/70 bg-background/80 backdrop-blur">
           <div className="mx-auto flex max-w-6xl items-center gap-4 px-4 py-3">
             <Link to="/" className="flex items-center gap-2">
-              <span className="flex size-8 items-center justify-center rounded-lg bg-primary font-display text-sm font-bold text-primary-foreground">
-                M
-              </span>
-              <span className="font-display text-lg font-bold">MegaTiers</span>
+              <img
+                src={megatiersLogo.url}
+                alt="MegaTiers"
+                className="h-10 w-auto"
+              />
             </Link>
             <div className="ml-auto flex items-center gap-4 text-sm">
               <Link to="/overall" className="text-muted-foreground hover:text-foreground">
