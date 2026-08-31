@@ -7,6 +7,7 @@ import {
   Gem,
   Shield,
   Leaf,
+  Apple,
   type LucideProps,
 } from "lucide-react";
 import type { CategoryId } from "@/lib/tiers";
@@ -20,6 +21,7 @@ const icons: Record<CategoryId, React.ComponentType<LucideProps>> = {
   diasmp: Gem,
   smp: Shield,
   ogv: Leaf,
+  uhc: Apple,
 };
 
 const colors: Record<CategoryId, string> = {
@@ -31,6 +33,7 @@ const colors: Record<CategoryId, string> = {
   diasmp: "text-cat-diasmp",
   smp: "text-cat-smp",
   ogv: "text-cat-ogv",
+  uhc: "text-cat-uhc",
 };
 
 export function CategoryIcon({
