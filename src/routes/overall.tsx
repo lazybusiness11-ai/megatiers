@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
 import { rankedPlayers } from "@/lib/players";
 import { CATEGORIES } from "@/lib/tiers";
 import { PlayerRow } from "@/components/PlayerRow";
@@ -25,14 +24,7 @@ export const Route = createFileRoute("/overall")({
 });
 
 function OverallPage() {
-  const [minCats, setMinCats] = useState(1);
-  const rows = useMemo(
-    () =>
-      rankedPlayers("sum").filter(
-        (r) => Object.keys(r.player.placements).length >= minCats,
-      ),
-    [minCats],
-  );
+  const rows = rankedPlayers("sum");
 
   return (
     <div className="space-y-6">
@@ -42,24 +34,6 @@ function OverallPage() {
           Tier placements across all 8 gamemodes converted to points and combined.
         </p>
       </header>
-
-      <div className="flex flex-wrap items-center gap-3">
-
-        <label className="flex items-center gap-2 text-sm text-muted-foreground">
-          Min. categories
-          <select
-            value={minCats}
-            onChange={(e) => setMinCats(Number(e.target.value))}
-            className="rounded-md border border-border bg-card px-2 py-1.5 text-foreground outline-none focus:border-primary"
-          >
-            {[1, 2, 3, 4, 5].map((n) => (
-              <option key={n} value={n}>
-                {n}+
-              </option>
-            ))}
-          </select>
-        </label>
-      </div>
 
       <div className="space-y-2">
         {rows.map((row, i) => (
