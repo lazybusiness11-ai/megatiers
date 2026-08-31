@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { CategoryNav } from "@/components/CategoryNav";
 
 function NotFoundComponent() {
   return (
