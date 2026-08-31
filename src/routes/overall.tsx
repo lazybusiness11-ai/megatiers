@@ -24,21 +24,14 @@ export const Route = createFileRoute("/overall")({
   component: OverallPage,
 });
 
-const methods: { id: ScoringMethod; label: string }[] = [
-  { id: "sum", label: "Sum" },
-  { id: "average", label: "Average" },
-  { id: "best4", label: "Best 4" },
-];
-
 function OverallPage() {
-  const [method, setMethod] = useState<ScoringMethod>("sum");
   const [minCats, setMinCats] = useState(1);
   const rows = useMemo(
     () =>
-      rankedPlayers(method).filter(
+      rankedPlayers("sum").filter(
         (r) => Object.keys(r.player.placements).length >= minCats,
       ),
-    [method, minCats],
+    [minCats],
   );
 
   return (
@@ -51,21 +44,7 @@ function OverallPage() {
       </header>
 
       <div className="flex flex-wrap items-center gap-3">
-        <div className="flex rounded-lg border border-border bg-card/60 p-1">
-          {methods.map((m) => (
-            <button
-              key={m.id}
-              onClick={() => setMethod(m.id)}
-              className={`rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${
-                method === m.id
-                  ? "bg-primary text-primary-foreground"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              {m.label}
-            </button>
-          ))}
-        </div>
+
         <label className="flex items-center gap-2 text-sm text-muted-foreground">
           Min. categories
           <select
