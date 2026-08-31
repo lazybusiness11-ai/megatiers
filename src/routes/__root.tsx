@@ -12,6 +12,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { CategoryNav } from "@/components/CategoryNav";
+import megatiersLogo from "@/assets/megatiers-logo.jpg.asset.json";
 
 function NotFoundComponent() {
   return (
