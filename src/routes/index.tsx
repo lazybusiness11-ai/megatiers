@@ -14,13 +14,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "MegaTiers ranks Minecraft PvP players across 8 gamemodes plus a combined Overall points leaderboard.",
+          "MegaTiers ranks Minecraft PvP players across 9 gamemodes plus a combined Overall points leaderboard.",
       },
       { property: "og:title", content: "MegaTiers — Minecraft PvP Tier List" },
       {
         property: "og:description",
         content:
-          "Tier rankings for Sword, Cart, Lightspeed, Mace, Spearmace, Diasmp, Smp and Ogv, plus the Overall leaderboard.",
+          "Tier rankings for Sword, Cart, Lightspeed, Mace, Spearmace, Diasmp, Smp, Ogv and UHC, plus the Overall leaderboard.",
       },
     ],
   }),
@@ -48,7 +48,7 @@ function Home() {
           Every gamemode. <span className="text-primary">One</span> leaderboard.
         </h1>
         <p className="mx-auto mt-4 max-w-xl text-sm text-muted-foreground sm:text-base">
-          MegaTiers tests players across 8 PvP gamemodes and converts every tier
+          MegaTiers tests players across 9 PvP gamemodes and converts every tier
           placement into points for a single Overall ranking.
         </p>
 

@@ -34,7 +34,8 @@ export type CategoryId =
   | "spearmace"
   | "diasmp"
   | "smp"
-  | "ogv";
+  | "ogv"
+  | "uhc";
 
 export type Category = {
   id: CategoryId;
@@ -53,6 +54,7 @@ export const CATEGORIES: Category[] = [
   { id: "diasmp", name: "Diasmp", icon: "Gem", accent: "cat-diasmp", blurb: "Full diamond SMP kits." },
   { id: "smp", name: "Smp", icon: "Shield", accent: "cat-smp", blurb: "Standard SMP survival PvP." },
   { id: "ogv", name: "Ogv", icon: "Leaf", accent: "cat-ogv", blurb: "OG Vanilla, no crystals." },
+  { id: "uhc", name: "UHC", icon: "Apple", accent: "cat-uhc", blurb: "Ultra Hardcore survival PvP." },
 ];
 
 export const CATEGORY_MAP = Object.fromEntries(

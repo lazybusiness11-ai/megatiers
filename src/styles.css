@@ -67,6 +67,7 @@
   --color-cat-diasmp: var(--cat-diasmp);
   --color-cat-smp: var(--cat-smp);
   --color-cat-ogv: var(--cat-ogv);
+  --color-cat-uhc: var(--cat-uhc);
   --color-tier-1: var(--tier-1);
   --color-tier-2: var(--tier-2);
   --color-tier-3: var(--tier-3);
@@ -107,6 +108,7 @@
   --cat-diasmp: oklch(0.78 0.14 195);
   --cat-smp: oklch(0.7 0.14 250);
   --cat-ogv: oklch(0.75 0.17 145);
+  --cat-uhc: oklch(0.65 0.18 30);
 
   --tier-1: oklch(0.85 0.16 90);
   --tier-2: oklch(0.82 0.02 250);
