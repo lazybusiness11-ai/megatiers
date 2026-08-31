@@ -9,6 +9,7 @@ export function PlayerRow({
   tier,
   points,
   meta,
+  showTier = true,
   children,
 }: {
   rank: number;
@@ -17,6 +18,7 @@ export function PlayerRow({
   tier: Tier | "UNRANKED";
   points: number;
   meta?: string;
+  showTier?: boolean;
   children?: React.ReactNode;
 }) {
   return (
@@ -49,7 +51,7 @@ export function PlayerRow({
       <span className="w-12 text-right font-display text-sm font-bold tabular-nums text-foreground">
         {points}
       </span>
-      <TierBadge tier={tier} />
+      {showTier ? <TierBadge tier={tier} /> : null}
     </Link>
   );
 }

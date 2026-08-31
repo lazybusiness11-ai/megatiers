@@ -44,20 +44,24 @@ function OverallPage() {
             region={row.player.region}
             tier={row.tier}
             points={row.score}
+            showTier={false}
           >
             <div className="hidden items-center gap-1 md:flex">
               {CATEGORIES.map((c) => {
                 const t = row.player.placements[c.id];
                 return (
-                  <span
+                  <div
                     key={c.id}
                     title={`${c.name}: ${t ?? "Untiered"}`}
-                    className={`flex size-7 items-center justify-center rounded-md border border-border/70 ${
+                    className={`flex w-9 flex-col items-center justify-center gap-0.5 rounded-md border border-border/70 py-1 ${
                       t ? "bg-muted" : "opacity-25"
                     }`}
                   >
                     <CategoryIcon id={c.id} className="size-3.5" />
-                  </span>
+                    <span className="font-display text-[10px] font-bold tabular-nums leading-none">
+                      {t ?? "—"}
+                    </span>
+                  </div>
                 );
               })}
             </div>
