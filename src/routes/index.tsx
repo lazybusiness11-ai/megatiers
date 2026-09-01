@@ -98,7 +98,6 @@ function Home() {
                   <span className="font-display font-semibold">{c.name}</span>
                   <ArrowRight className="ml-auto size-4 text-muted-foreground transition-transform group-hover:translate-x-0.5" />
                 </div>
-                <p className="mt-1 text-xs text-muted-foreground">{c.blurb}</p>
                 {leader && (
                   <div className="mt-3 flex items-center gap-2 border-t border-border/70 pt-3">
                     <img src={headUrl(leader.player.ign, 32)} alt="" className="size-6 rounded" />
