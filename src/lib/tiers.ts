@@ -42,19 +42,18 @@ export type Category = {
   name: string;
   icon: string;
   accent: string; // css var name suffix
-  blurb: string;
 };
 
 export const CATEGORIES: Category[] = [
-  { id: "sword", name: "Sword", icon: "Swords", accent: "cat-sword", blurb: "Classic 1v1 sword duels." },
-  { id: "cart", name: "Cart", icon: "TramFront", accent: "cat-cart", blurb: "Minecart combat mastery." },
-  { id: "lightspeed", name: "Lightspeed", icon: "Zap", accent: "cat-lightspeed", blurb: "High-APM speed fights." },
-  { id: "mace", name: "Mace", icon: "Hammer", accent: "cat-mace", blurb: "Wind-charge mace plays." },
-  { id: "spearmace", name: "Spearmace", icon: "Crosshair", accent: "cat-spearmace", blurb: "Spear and mace hybrid." },
-  { id: "diasmp", name: "Diasmp", icon: "Gem", accent: "cat-diasmp", blurb: "Full diamond SMP kits." },
-  { id: "smp", name: "Smp", icon: "Shield", accent: "cat-smp", blurb: "Standard SMP survival PvP." },
-  { id: "ogv", name: "Ogv", icon: "Leaf", accent: "cat-ogv", blurb: "OG Vanilla, no crystals." },
-  { id: "uhc", name: "UHC", icon: "Apple", accent: "cat-uhc", blurb: "Ultra Hardcore survival PvP." },
+  { id: "sword", name: "Sword", icon: "Swords", accent: "cat-sword" },
+  { id: "cart", name: "Cart", icon: "TramFront", accent: "cat-cart" },
+  { id: "lightspeed", name: "Lightspeed", icon: "Zap", accent: "cat-lightspeed" },
+  { id: "mace", name: "Mace", icon: "Hammer", accent: "cat-mace" },
+  { id: "spearmace", name: "Spearmace", icon: "Crosshair", accent: "cat-spearmace" },
+  { id: "diasmp", name: "Diasmp", icon: "Gem", accent: "cat-diasmp" },
+  { id: "smp", name: "Smp", icon: "Shield", accent: "cat-smp" },
+  { id: "ogv", name: "Ogv", icon: "Leaf", accent: "cat-ogv" },
+  { id: "uhc", name: "UHC", icon: "Apple", accent: "cat-uhc" },
 ];
 
 export const CATEGORY_MAP = Object.fromEntries(

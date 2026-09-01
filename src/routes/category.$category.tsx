@@ -57,7 +57,6 @@ function CategoryPage() {
         </span>
         <div>
           <h1 className="text-3xl font-bold">{cat.name}</h1>
-          <p className="text-sm text-muted-foreground">{cat.blurb}</p>
         </div>
       </header>
 
